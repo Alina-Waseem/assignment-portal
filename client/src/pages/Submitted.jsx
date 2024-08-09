@@ -25,7 +25,7 @@ const AssignmentsPage = ({ studentId }) => {
   useEffect(() => {
     const fetchAssignments = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/submitted/${studentId}`); 
+        const response = await fetch(`https://assignment-portal-ruby.vercel.app/api/submitted/${studentId}`); 
         if (!response.ok) {
           throw new Error('Failed to fetch assignments');
         }
@@ -94,8 +94,8 @@ const AssignmentsPage = ({ studentId }) => {
             {filteredAssignments.map((assignment, index) => (
               <TableRow key={assignment._id}>
                 <TableCell>{index + 1}</TableCell>
-                <TableCell>{assignment.assignmentId.courseName}</TableCell>
-                <TableCell>{assignment.assignmentId.title}</TableCell>
+                <TableCell>{assignment.assignmentId?.courseName || 'N/A'}</TableCell>
+                <TableCell>{assignment.assignmentId?.title || 'N/A'}</TableCell>
                 <TableCell>{assignment.marks}</TableCell>
                 <TableCell>
                   <span className={assignment.status.toLowerCase()}>{assignment.status}</span>

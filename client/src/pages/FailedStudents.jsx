@@ -25,7 +25,7 @@ const AssignmentsPageFailed = ({ teacherId }) => {
             try {
                 const cacheBuster = new Date().getTime();
                 console.log(`Fetching assignments for teacherId: ${teacherId}`);
-                const response = await fetch(`http://localhost:8000/api/studentsfailed/${teacherId}?cacheBuster=${cacheBuster}`);
+                const response = await fetch(`https://assignment-portal-ruby.vercel.app/api/studentsfailed/${teacherId}?cacheBuster=${cacheBuster}`);
                 
                 console.log(`Response status: ${response.status}`);
                 

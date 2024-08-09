@@ -26,7 +26,7 @@ const AssignmentsPage = () => {
   useEffect(() => {
     const fetchAssignments = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/current/${studentId}`);
+        const response = await fetch(`https://assignment-portal-ruby.vercel.app/api/current/${studentId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
