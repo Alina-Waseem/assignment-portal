@@ -6,7 +6,7 @@ const port = 8000;
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Frontend URL
+    origin: 'https://assignment-submission-portal-zeta.vercel.app', // Frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true // Allows cookies to be sent
 })); 
